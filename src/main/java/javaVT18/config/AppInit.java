@@ -1,4 +1,4 @@
-package javaVT18.config;
+package javavt18.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -14,9 +14,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     @Override
     protected Class<?>[] getServletConfigClasses() {
 
-        return new Class<?>[]{
-                WebConfig.class
-        };
+        return new Class<?>[0];
     }
 
     @Override

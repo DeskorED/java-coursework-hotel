@@ -1,4 +1,4 @@
-package javaVT18.config;
+package javavt18.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -8,10 +8,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.ResourceBundleViewResolver;
+
 
 @Configuration
-@ComponentScan({"javaVT18"})
+@ComponentScan({"javavt18"})
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter {
 
@@ -21,14 +21,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         resolver.setPrefix("/pages/");
         resolver.setSuffix(".jsp");
         resolver.setOrder(2);
-        return resolver;
-    }
-
-    @Bean
-    public ViewResolver resourceBundleViewResolver() {
-        ResourceBundleViewResolver resolver = new ResourceBundleViewResolver();
-        resolver.setBasename("view");
-        resolver.setOrder(1);
         return resolver;
     }
 
