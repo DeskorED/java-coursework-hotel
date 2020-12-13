@@ -1,5 +1,6 @@
-package javavt18.config;
+package javavt18;
 
+import javavt18.config.WebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
