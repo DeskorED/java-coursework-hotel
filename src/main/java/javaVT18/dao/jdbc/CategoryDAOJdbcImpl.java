@@ -14,11 +14,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class CategoryDAOJdbcImpl implements CategoryDAO {
-    @Autowired
-    @Qualifier("getCategoryJdbcDAO")
-
+    
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
     public CategoryDAOJdbcImpl(DataSource dataSource) {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
@@ -71,7 +70,7 @@ public class CategoryDAOJdbcImpl implements CategoryDAO {
     private Category getCategoryFromDB(ResultSet rs) throws SQLException{
         Category category = new Category();
         category.setBreakfast(rs.getBoolean("Breakfast"));
-        category.setDinner(rs.getBoolean("idDinner"));
+        category.setDinner(rs.getBoolean("Dinner"));
         category.setJacuzzi(rs.getBoolean("Jacuzzi"));
         category.setName(rs.getString("Name"));
         category.setTv(rs.getBoolean("TV"));

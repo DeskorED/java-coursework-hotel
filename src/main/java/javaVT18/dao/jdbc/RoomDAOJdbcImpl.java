@@ -17,13 +17,14 @@ import org.springframework.jdbc.core.RowMapper;
 public class RoomDAOJdbcImpl implements RoomDAO {
 
     private JdbcTemplate jdbcTemplate;
+
     @Autowired
     public RoomDAOJdbcImpl(DataSource dataSource) {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
     public void saveOrUpdate(Room item) {
-        if (item.getIdBrand() > 0) {
+        if (item.getIdRoom() > 0) {
             // update
             System.out.println("Room update");
             String sql = "UPDATE room SET roomName=?, roomNumber=?, Status=?, idCategory=? WHERE idRoom=?";
@@ -70,6 +71,7 @@ public class RoomDAOJdbcImpl implements RoomDAO {
 
     private Room getRoomFromDB(ResultSet rs) throws SQLException{
         Room room = new Room();
+        room.setIdRoom(rs.getShort("idRoom"));
         room.setIdCategory(rs.getShort("idCategory"));
         room.setRoomName(rs.getString("roomName"));
         room.setRoomNumber(rs.getShort("roomNumber"));

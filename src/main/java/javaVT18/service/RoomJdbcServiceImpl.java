@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
-@Service("carModelJdbcService")
+@Service("RoomJdbcService")
 public class RoomJdbcServiceImpl implements RoomService {
     @Autowired
     @Qualifier("getRoomJdbcDAO")
