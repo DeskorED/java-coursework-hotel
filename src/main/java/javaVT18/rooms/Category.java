@@ -15,8 +15,7 @@ public class Category implements Serializable {
     @ManyToOne
     @JoinColumn(name = "idCategory")
 
-    @NotEmpty @Column
-    @Column private String Name;
+    @NotEmpty @Column private String Name;
     @Column private boolean wifi;
     @Column private boolean breakfast;
     @Column private boolean dinner;
@@ -102,9 +101,8 @@ public class Category implements Serializable {
     @Override
     public String toString() {
         return "Category{" +
-                "idModel=" + idModel +
-                ", idBrand=" + idBrand +
-                ", carBrand=" + carBrand +
+
+                "idCategory=" + idCategory +
                 ", Name='" + Name + '\'' +
                 ", wifi=" + wifi +
                 ", breakfast=" + breakfast +

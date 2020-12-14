@@ -24,7 +24,7 @@ public class CategoryDAOJdbcImpl implements CategoryDAO {
     }
 
     public void saveOrUpdate(Category item) {
-        if (item.getIdModel() > 0) {
+        if (item.getIdCategory() > 0) {
             // update
             String sql = "UPDATE category SET Name=?, numberOfPlaces=?, Wifi=?, Breakfast=?, Dinner=?, Jacuzzi=?, TV=?, Price=? WHERE idCategory=?";
             jdbcTemplate.update(sql, item.getNumberOfPlaces(), item.isWifi(),item.isBreakfast(),
@@ -77,7 +77,7 @@ public class CategoryDAOJdbcImpl implements CategoryDAO {
         category.setTv(rs.getBoolean("TV"));
         category.setPrice(rs.getShort("Price"));
         category.setNumberOfPlaces(rs.getByte("numberOfPlaces"));
-        category.setWifi(rs.getByte("Wifi"));
+        category.setWifi(rs.getBoolean("Wifi"));
         category.setIdCategory(rs.getShort("idCategory"));
         return category;
     }

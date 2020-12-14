@@ -43,7 +43,7 @@ public class RoomDAOJdbcImpl implements RoomDAO {
     }
 
     public Room get(int itemId) {
-        String sql = "SELECT * FROM room WHERE idRoom=" + itemId;
+        String sql = "SELECT * FROM room WHERE idRoom=?" + itemId;
         return jdbcTemplate.query(sql, new ResultSetExtractor<Room>() {
 
             public Room extractData(ResultSet rs) throws SQLException,
@@ -58,7 +58,7 @@ public class RoomDAOJdbcImpl implements RoomDAO {
 
     public List<Room> list() {
         String sql = "SELECT * FROM room";
-        List<Room> listRoom = jdbcTemplate.query(sql, new RowMapper<CarBrand>() {
+        List<Room> listRoom = jdbcTemplate.query(sql, new RowMapper<Room>() {
 
             public Room mapRow(ResultSet rs, int i) throws SQLException {
 
@@ -70,7 +70,7 @@ public class RoomDAOJdbcImpl implements RoomDAO {
 
     private Room getRoomFromDB(ResultSet rs) throws SQLException{
         Room room = new Room();
-        room.setIdCategory(rs.getInt("idCategory"));
+        room.setIdCategory(rs.getShort("idCategory"));
         room.setRoomName(rs.getString("roomName"));
         room.setRoomNumber(rs.getShort("roomNumber"));
         room.setStatus(rs.getBoolean("Status"));

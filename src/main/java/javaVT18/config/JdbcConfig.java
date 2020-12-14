@@ -1,5 +1,9 @@
 package javavt18.config;
 
+import javavt18.dao.CategoryDAO;
+import javavt18.dao.RoomDAO;
+import javavt18.dao.jdbc.CategoryDAOJdbcImpl;
+import javavt18.dao.jdbc.RoomDAOJdbcImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
