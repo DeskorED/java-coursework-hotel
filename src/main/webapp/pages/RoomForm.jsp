@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form:form method="POST" modelAttribute="carModel" class="form-horizontal">
+                    <form:form method="POST" modelAttribute="room" class="form-horizontal">
                         <form:hidden path="idRoom"/>
                         <div class="form-group">
                             <label for="idCategory" class="col-sm-3 control-label" >Category:</label>
@@ -32,7 +32,7 @@
                                 <form:select path="idCategory" multiple="false" class="form-control">
                                     <c:forEach var="category" items="${listCategory}" varStatus="status">
                                         <c:choose>
-                                            <c:when test="${category.idCategory == room.idRoom}">
+                                            <c:when test="${category.idCategory == room.idCategory}">
                                                 <option selected value="${category.idCategory}">${category.name}</option>
                                             </c:when>
                                             <c:otherwise>

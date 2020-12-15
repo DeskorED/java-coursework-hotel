@@ -34,7 +34,7 @@
                         <div class="form-group">
                             <label for="numberOfPlaces" class="col-sm-3 control-label">number of places:</label>
                             <div class="col-sm-9">
-                                <form:input path="numberOfPlaces" class="form-control" type="number" min="1800" max="2050"  />
+                                <form:input path="numberOfPlaces" class="form-control" type="number"  max="12"  />
                             </div>
                         </div>
                         <div class="form-group">

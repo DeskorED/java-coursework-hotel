@@ -17,10 +17,9 @@ th{
     text-align: center;
 }
 
-h1 > small{
+h1 {
     color: white;
 }
-
 
 .sort {
     border:none;

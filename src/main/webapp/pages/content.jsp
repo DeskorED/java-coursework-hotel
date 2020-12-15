@@ -18,7 +18,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <div class="text-center">
-                        <h1>${title}<small> Hotel of my dream</small></h1>
+                        <h1>${title}</h1>
                     </div>
                 </div>
                 <div class="alert alert-info" role="alert">
@@ -33,7 +33,8 @@
                         </div>
                         <table class="table table-striped table-condensed" id="room-categories">
                             <thead>
-                            <th><button class="sort" data-sort="categories-name">category</button></th>
+                            <th><button class="sort" data-sort="categories-name">category name</button></th>
+                            <th><button class="sort" data-sort="categories-id">category id</button></th>
                             <th><button class="sort" data-sort="number-of-places">number of places</button></th>
                             <th><button class="sort" data-sort="wi-fi">wifi</button></th>
                             <th><button class="sort" data-sort="breakfast">breakfast</button></th>
@@ -46,13 +47,14 @@
                             <tbody align="center" class="list">
                             <c:forEach var="category" items="${listCategory}" varStatus="status">
                                 <tr>
-                                    <td class="category-name">${category.name}</td>
+                                    <td class="categories-name">${category.name}</td>
+                                    <td class="categories-id">${category.idCategory}</td>
                                     <td class="number-of-places">${category.numberOfPlaces}</td>
-                                    <td class="wi-fi">${category.wifi}</td>
-                                    <td class="breakfast">${category.breakfast}</td>
-                                    <td class="dinner">${category.dinner ? 'входит в стоимость' : 'будешь плотить'}</td>
-                                    <td class="jacuzzi">${category.jacuzzi}</td>
-                                    <td class="tv">${category.tv}</td>
+                                    <td class="wi-fi">${category.wifi ? 'Входит в стоимость' : 'Дополнительная плата'}</td>
+                                    <td class="breakfast">${category.breakfast ? 'Входит в стоимость' : 'Дополнительная плата'}</td>
+                                    <td class="dinner">${category.dinner ? 'Входит в стоимость' : 'Дополнительная плата'}</td>
+                                    <td class="jacuzzi">${category.jacuzzi ? 'Входит в стоимость' : 'Дополнительная плата'}</td>
+                                    <td class="tv">${category.tv ? 'Входит в стоимость' : 'Дополнительная плата'}</td>
                                     <td class="price">${category.price}</td>
                                     <td class="action">
                                         <a href="/${instrument}/edit-Category/${category.idCategory}">Edit</a>
@@ -63,7 +65,7 @@
                             </c:forEach>
                             </tbody>
                         </table>
-                        <div class="panel-footer"><a class="btn btn-info" role="button" href="/${instrument}/newBrand">Add new category &raquo</a></div>
+                        <div class="panel-footer"><a class="btn btn-info" role="button" href="/${instrument}/newCategory">Add new category &raquo</a></div>
                     </div>
 
                     <div class="panel panel-info">
@@ -83,11 +85,11 @@
                             <tbody align="center" class="list">
                             <c:forEach var="room" items="${listRoom}" varStatus="status">
                                 <tr>
-                                    <td class="roomName">${room.idCategory}</td>
-                                    <td class="roomName">${room.idRoom}</td>
-                                    <td class="idCategory">${room.roomName}</td>
-                                    <td class="status">${room.roomNumber}</td>
-                                    <td class="roomNumber">${room.status}</td>
+                                    <td class="category">${room.idCategory}</td>
+                                    <td class="idRoom">${room.idRoom}</td>
+                                    <td class="roomName">${room.roomName}</td>
+                                    <td class="roomNumber">${room.roomNumber}</td>
+                                    <td class="status">${room.status}</td>
                                     <td>
                                         <a href="/${instrument}/edit-room/${room.idRoom}">Edit</a>
                                         &nbsp;&nbsp;&nbsp;&nbsp;

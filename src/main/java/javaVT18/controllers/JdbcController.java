@@ -18,8 +18,8 @@ import java.util.*;
 @Controller
 public class JdbcController {
 
-    private static final String INSTRUMENT = "jdbc";
-    private static final String TITLE = "JDBC";
+    private static final String INSTRUMENT = "rooms";
+    private static final String TITLE = "SERG-HOTEL";
 
     @Autowired
     @Qualifier("CategoryJdbcService")

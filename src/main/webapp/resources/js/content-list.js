@@ -4,9 +4,9 @@ var roomOptions = {
 
 var roomList = new List('rooms', roomOptions);
 
-var modelOptions = {
-    valueNames: ['brand-name', 'model-name', 'generation', 'production-year',
-                 'doors', 'seats','maximum-speed']
+var categoryOptions = {
+    valueNames: ['categories-name', 'number-of-places', 'wi-fi', 'breakfast',
+                 'dinner', 'jacuzzi','tv','price',]
 };
 
-var modelList = new List('car-models', modelOptions);
+var categoryList = new List('room-categories', categoryOptions);
