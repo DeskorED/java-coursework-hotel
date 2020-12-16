@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 import java.util.*;
 
 @Controller
@@ -29,7 +30,7 @@ public class JdbcController {
     @Qualifier("RoomJdbcService")
     private RoomService RoomService;
 
-    @RequestMapping(value = "/"+INSTRUMENT+"", method = RequestMethod.GET)
+    @RequestMapping(value = "/" + INSTRUMENT + "", method = RequestMethod.GET)
     public String printJdbc(ModelMap room) {
         room.addAttribute("title", TITLE);
         room.addAttribute("instrument", INSTRUMENT);
@@ -37,37 +38,37 @@ public class JdbcController {
         List<Category> listCategory = CategoryService.list();
         List<Room> listRoom = RoomService.list();
 
-        room.addAttribute("listRoom",listRoom);
-        room.addAttribute("listCategory",listCategory);
+        room.addAttribute("listRoom", listRoom);
+        room.addAttribute("listCategory", listCategory);
         return "content";
     }
 
     //CRUD operations with CarBrand entity
-    @RequestMapping(value = "/"+INSTRUMENT+"/newCategory", method = RequestMethod.GET)
+    @RequestMapping(value = "/" + INSTRUMENT + "/newCategory", method = RequestMethod.GET)
     public String addCategory(ModelMap category) {
         category.addAttribute("title", TITLE);
         category.addAttribute("action", "Add new");
 
         Category Category = new Category();
-        category.addAttribute("Category", Category);
+        category.addAttribute("category", Category);
 
         return "CategoryForm";
     }
 
-    @RequestMapping(value = { "/"+INSTRUMENT+"/newCategory" }, method = RequestMethod.POST)
+    @RequestMapping(value = {"/" + INSTRUMENT + "/newCategory"}, method = RequestMethod.POST)
     public String saveCategory(Category category) {
 
         CategoryService.saveOrUpdate(category);
-        return "redirect:/"+INSTRUMENT;
+        return "redirect:/" + INSTRUMENT;
     }
 
-    @RequestMapping(value = { "/"+INSTRUMENT+"/delete-category/{idCategory}" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/" + INSTRUMENT + "/delete-category/{idCategory}"}, method = RequestMethod.GET)
     public String deleteCategory(@PathVariable int idCategory) {
         CategoryService.delete(idCategory);
-        return "redirect:/"+INSTRUMENT;
+        return "redirect:/" + INSTRUMENT;
     }
 
-    @RequestMapping(value = {  "/"+INSTRUMENT+"/edit-category/{idCategory}" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/" + INSTRUMENT + "/edit-category/{idCategory}"}, method = RequestMethod.GET)
     public String editCategory(@PathVariable int idCategory, ModelMap category) {
         category.addAttribute("title", TITLE);
         category.addAttribute("action", "Edit");
@@ -77,42 +78,42 @@ public class JdbcController {
         return "CategoryForm";
     }
 
-    @RequestMapping(value = {  "/"+INSTRUMENT+"/edit-category/{idCategory}" }, method = RequestMethod.POST)
+    @RequestMapping(value = {"/" + INSTRUMENT + "/edit-category/{idCategory}"}, method = RequestMethod.POST)
     public String updateCategory(Category cat) {
         CategoryService.saveOrUpdate(cat);
-        return "redirect:/"+INSTRUMENT;
+        return "redirect:/" + INSTRUMENT;
     }
 
     //CRUD operations with CarModel entity
-    @RequestMapping(value = "/"+INSTRUMENT+"/newRoom", method = RequestMethod.GET)
-    public String addRoom(ModelMap room) {
-        room.addAttribute("title", TITLE);
-        room.addAttribute("action", "Add new");
+    @RequestMapping(value = "/" + INSTRUMENT + "/newRoom", method = RequestMethod.GET)
+    public String addRoom(ModelMap model) {
+        model.addAttribute("title", TITLE);
+        model.addAttribute("action", "Add new");
 
-        List<Category> listCategories = CategoryService.list();
-        System.out.println(listCategories);
-        Room Room = new Room();
-        room.addAttribute("listCarBrand", listCategories);
-        room.addAttribute("carModel", Room);
+        Room room = new Room();
+        model.addAttribute("room", room);
+
+        List<Category> listCategory = CategoryService.list();
+        model.addAttribute("listCategory", listCategory);
 
         return "RoomForm";
     }
 
-    @RequestMapping(value = { "/"+INSTRUMENT+"/newRoom" }, method = RequestMethod.POST)
-    public String saveModel(Room room) {
+    @RequestMapping(value = {"/" + INSTRUMENT + "/newRoom"}, method = RequestMethod.POST)
+    public String saveRoom(Room room) {
 
         RoomService.saveOrUpdate(room);
-        return "redirect:/"+INSTRUMENT;
+        return "redirect:/" + INSTRUMENT;
     }
 
-    @RequestMapping(value = { "/"+INSTRUMENT+"/delete-room/{idRoom}" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/" + INSTRUMENT + "/delete-room/{idRoom}"}, method = RequestMethod.GET)
     public String deleteRoom(@PathVariable int idRoom) {
         RoomService.delete(idRoom);
-        return "redirect:/"+INSTRUMENT;
+        return "redirect:/" + INSTRUMENT;
     }
 
-    @RequestMapping(value = {  "/"+INSTRUMENT+"/edit-room/{idRoom}" }, method = RequestMethod.GET)
-    public String editModel(@PathVariable int idRoom, ModelMap rooms) {
+    @RequestMapping(value = {"/" + INSTRUMENT + "/edit-room/{idRoom}"}, method = RequestMethod.GET)
+    public String editRoom(@PathVariable int idRoom, ModelMap rooms) {
         rooms.addAttribute("title", TITLE);
         rooms.addAttribute("action", "Edit");
 
@@ -125,13 +126,13 @@ public class JdbcController {
         return "RoomForm";
     }
 
-    @RequestMapping(value = {  "/"+INSTRUMENT+"/edit-room/{idRoom}" }, method = RequestMethod.POST)
-    public String updateModel(Room room) {
+    @RequestMapping(value = {"/" + INSTRUMENT + "/edit-room/{idRoom}"}, method = RequestMethod.POST)
+    public String updateRoom(Room room) {
         RoomService.saveOrUpdate(room);
-        return "redirect:/"+INSTRUMENT;
+        return "redirect:/" + INSTRUMENT;
     }
 
-    @RequestMapping(value = {"/"+INSTRUMENT+"/pdfReport", "/"+INSTRUMENT+"/xlsxReport.xlsx"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/" + INSTRUMENT + "/pdfReport", "/" + INSTRUMENT + "/xlsxReport.xlsx"}, method = RequestMethod.GET)
     public ModelAndView downloadReport(@RequestParam("view") String view) {
         ModelAndView modelAndView = new ModelAndView();
 

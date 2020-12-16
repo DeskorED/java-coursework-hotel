@@ -23,16 +23,16 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form:form method="POST" modelAttribute="Category" class="form-horizontal">
+                    <form:form method="POST" modelAttribute="category" class="form-horizontal">
                         <form:hidden path="idCategory"/>
                         <div class="form-group">
-                            <label for="name" class="col-sm-3 control-label">Category:</label>
+                            <label for="name" class="col-sm-3 control-label">Name of category:</label>
                             <div class="col-sm-9">
                                 <form:input path="name" class="form-control" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="numberOfPlaces" class="col-sm-3 control-label">number of places:</label>
+                            <label for="numberOfPlaces" class="col-sm-3 control-label">Number of places:</label>
                             <div class="col-sm-9">
                                 <form:input path="numberOfPlaces" class="form-control" type="number"  max="12"  />
                             </div>
@@ -40,35 +40,35 @@
                         <div class="form-group">
                             <label for="Wifi" class="col-sm-3 control-label">Wi-fi:</label>
                             <div class="col-sm-9">
-                                <form:input path="wifi" class="form-control" />
+                                <form:checkbox path="wifi" class="form-control" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="Breakfast" class="col-sm-3 control-label">Breakfast:</label>
                             <div class="col-sm-9">
-                                <form:input path="breakfast" class="form-control" />
+                                <form:checkbox path="breakfast" class="form-control" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="Dinner" class="col-sm-3 control-label">Dinner:</label>
                             <div class="col-sm-9">
-                                <form:input path="dinner" class="form-control" />
+                                <form:checkbox path="dinner" class="form-control" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="Jacuzzi" class="col-sm-3 control-label">Jacuzzi:</label>
                             <div class="col-sm-9">
-                                <form:input path="jacuzzi" class="form-control" />
+                                <form:checkbox path="jacuzzi" class="form-control" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="TV" class="col-sm-3 control-label">TV:</label>
                             <div class="col-sm-9">
-                                <form:input path="tv" class="form-control" />
+                                <form:checkbox path="tv" class="form-control" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="Price" class="col-sm-3 control-label">Price:</label>
+                            <label for="Price" class="col-sm-3 control-label">Price ($):</label>
                             <div class="col-sm-9">
                                 <form:input path="price" class="form-control" />
                             </div>

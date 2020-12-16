@@ -10,7 +10,7 @@
 </head>
 <body>
 <c:import url="page_components/header.jsp"></c:import>
-<div class="container" >
+<div class="container-fluid" >
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <div class="jumbotron" id="index_jumbotron">
@@ -19,7 +19,7 @@
             </div>
             <div class="cols">
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-lg-offset-4">
                         <img class="img-rounded" src="/resources/img/koggala-beach-hotel.jpg" alt="Hotel logo" width="400" height="360">
                         <p>You have come to the site of my hotel, which is the 8th wonder of the world, my hotel has the title of 10 stars and our restaurant has 5 Michelin stars</p>
                         <p><a class="btn btn-primary" href="/rooms" role="button">View room-list &raquo;</a></p>

@@ -32,7 +32,7 @@
                                 <form:select path="idCategory" multiple="false" class="form-control">
                                     <c:forEach var="category" items="${listCategory}" varStatus="status">
                                         <c:choose>
-                                            <c:when test="${category.idCategory == room.idCategory}">
+                                            <c:when test="${room.idCategory == category.idCategory}">
                                                 <option selected value="${category.idCategory}">${category.name}</option>
                                             </c:when>
                                             <c:otherwise>
@@ -52,13 +52,13 @@
                         <div class="form-group">
                             <label for="roomNumber" class="col-sm-3 control-label">RoomNumber:</label>
                             <div class="col-sm-9">
-                                <form:input path="roomNumber" class="form-control"/>
+                                <form:input  path="roomNumber" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="status" class="col-sm-3 control-label">Status:</label>
                             <div class="col-sm-9">
-                                <form:input path="status" class="form-control" type="number" min="1800" max="2050"  />
+                                <form:checkbox path="status" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">

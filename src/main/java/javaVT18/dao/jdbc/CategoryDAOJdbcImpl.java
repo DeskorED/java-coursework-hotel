@@ -26,14 +26,14 @@ public class CategoryDAOJdbcImpl implements CategoryDAO {
         if (item.getIdCategory() > 0) {
             // update
             String sql = "UPDATE category SET Name=?, numberOfPlaces=?, Wifi=?, Breakfast=?, Dinner=?, Jacuzzi=?, TV=?, Price=? WHERE idCategory=?";
-            jdbcTemplate.update(sql, item.getNumberOfPlaces(), item.isWifi(),item.isBreakfast(),
+            jdbcTemplate.update(sql, item.getName(), item.getNumberOfPlaces(), item.isWifi(),item.isBreakfast(),
                     item.isDinner(), item.isJacuzzi(), item.isTv(), item.getPrice(), item.getIdCategory());
         } else {
             // insert
-            String sql = "INSERT INTO category (numberOfPlaces, Wifi, Breakfast, Dinner, Jacuzzi, TV,Price)"
-                    + " VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO category (numberOfPlaces, Wifi, Breakfast, Dinner, Jacuzzi, TV, Price, Name)"
+                    + " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             jdbcTemplate.update(sql, item.getNumberOfPlaces(), item.isWifi(),item.isBreakfast(),
-                    item.isDinner(), item.isJacuzzi(), item.isTv(), item.getPrice());
+                    item.isDinner(), item.isJacuzzi(), item.isTv(), item.getPrice(), item.getName());
         }
     }
 
