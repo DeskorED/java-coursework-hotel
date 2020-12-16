@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="status" class="col-sm-3 control-label">Status:</label>
+                            <label  class="col-sm-3 control-label">Status:</label>
                             <div class="col-sm-9">
                                 <form:checkbox path="status" class="form-control"/>
                             </div>

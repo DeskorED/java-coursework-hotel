@@ -38,31 +38,31 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="Wifi" class="col-sm-3 control-label">Wi-fi:</label>
+                            <label  class="col-sm-3 control-label">Wi-fi:</label>
                             <div class="col-sm-9">
                                 <form:checkbox path="wifi" class="form-control" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="Breakfast" class="col-sm-3 control-label">Breakfast:</label>
+                            <label  class="col-sm-3 control-label">Breakfast:</label>
                             <div class="col-sm-9">
                                 <form:checkbox path="breakfast" class="form-control" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="Dinner" class="col-sm-3 control-label">Dinner:</label>
+                            <label  class="col-sm-3 control-label">Dinner:</label>
                             <div class="col-sm-9">
                                 <form:checkbox path="dinner" class="form-control" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="Jacuzzi" class="col-sm-3 control-label">Jacuzzi:</label>
+                            <label  class="col-sm-3 control-label">Jacuzzi:</label>
                             <div class="col-sm-9">
                                 <form:checkbox path="jacuzzi" class="form-control" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="TV" class="col-sm-3 control-label">TV:</label>
+                            <label  class="col-sm-3 control-label">TV:</label>
                             <div class="col-sm-9">
                                 <form:checkbox path="tv" class="form-control" />
                             </div>

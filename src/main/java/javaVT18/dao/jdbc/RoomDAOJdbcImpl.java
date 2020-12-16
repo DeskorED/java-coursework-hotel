@@ -44,7 +44,7 @@ public class RoomDAOJdbcImpl implements RoomDAO {
     }
 
     public Room get(int itemId) {
-        String sql = "SELECT * FROM room WHERE idRoom=?" + itemId;
+        String sql = "SELECT * FROM room WHERE idRoom=" + itemId;
         return jdbcTemplate.query(sql, new ResultSetExtractor<Room>() {
 
             public Room extractData(ResultSet rs) throws SQLException,
